@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Generator</title>
+</head>
+<style>
+    .report{
+        display: flex;
+        gap: 25%;
+    }
+    #display{
+        /* padding: 5%0%; */
+    }
+</style>
+<body>
+    <div class="report">
+        <div>
+            <h2>SIG?</h2>
+            <select id="sig">
+                <option disabled selected>Default</option>
+                <option value="WEB">Web</option>
+                <option value="PYTHON">Python</option>
+                <option value="GRAPH">Graph</option>
+                <option value="FOUNDATION">Foundation</option>
+                <option value="TECH">Tech</option>
+            </select>
+            <input type="text" id="name" placeholder="Your Name"/>
+            <h2>Task No.?</h2>
+            <select id="task">
+                <option disabled selected>Default</option>
+                <option value="Task 1">1</option>
+                <option value="Task 2">2</option>
+                <option value="Task 3">3</option>
+                <option value="Task 4">4</option>
+                <option value="Task 5">5</option>
+                <option value="Task 6">6</option>
+                <option value="Project">Project</option>
+            </select>
+            <input type="text" id="task-name" placeholder="Task One-Liner"/>
+            <h3>Best performers?</h3>
+            <input type="number" id="much" placeholder="How Many?" onchange="inpmany()"/>
+            <br/>
+            <div id="BP">
+            </div>
+            <h2>Current Task No.?</h2>
+            <select id="currenttask">
+                <option disabled selected>Default</option>
+                <option value="Task 1">1</option>
+                <option value="Task 2">2</option>
+                <option value="Task 3">3</option>
+                <option value="Task 4">4</option>
+                <option value="Task 5">5</option>
+                <option value="Task 6">6</option>
+                <option value="Project">Project</option>
+            </select>
+            <input type="text" id="ctask-name" placeholder="Task One-Liner"/>
+            <br/>
+            <button onclick="createreport()" style="margin: 5%0%;font-weight: 600;padding: 3%6%;">Submit</button>
+            
+        </div>
+        <div id="display"></div>
+    </div>
+    
+    
+</body>
+<script type="text/javascript" src="report.js"></script>
+</html>
