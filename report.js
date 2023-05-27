@@ -8,13 +8,23 @@ let ctaskline=document.getElementById('ctask-name');
 let BP=document.getElementById('BP');
 let Ddiv=document.getElementById('display');
 let much=document.getElementById('much')
+let text=""
 let list=""
+let copyContent = async () => {
+    try {
+    await navigator.clipboard.writeText(text);
+    console.log('Content copied to clipboard');
+    } catch (err) {
+    console.error('Failed to copy: ', err);
+    }
+}
 function createreport(){
     let BestP=document.getElementsByClassName("BestP")
     for(let i=0;i<BestP.length;i++){
         list+=`<li>${BestP[i].value}</li>`
     }
-    Ddiv.innerHTML=`*SIG ${sig.value}'23 REPORT*<br/>
+    Ddiv.innerHTML=`
+    *SIG ${sig.value}'23 REPORT*<br/>
 <br/>
     Respected all,<br/>
     <br/>
@@ -23,17 +33,14 @@ function createreport(){
     <br/>
     ${task.value}: ${taskline.value}<br/>
     =============================<br/>
-
 <br/>
     Best Performers:<br/> 
     <ol>
     ${list}
     </ol>
-
 <br/>
     =============================<br/>
     ${ctask.value}: ${ctaskline.value}<br/>
-    
     (Students are still performing this task)<br/>
     =============================<br/>
     <br/>
@@ -43,6 +50,8 @@ function createreport(){
     *${Yname.value}*<br/>
     *SIG ${sig.value} HEAD*<br/>
     *IPEC ACM STUDENT CHAPTER*`
+    text = document.getElementById('display').textContent;
+    
 }
 function inpmany(){
     console.log(much.value)
